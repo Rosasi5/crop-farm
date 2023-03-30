@@ -1,0 +1,62 @@
+<!-- Converted this page to basic HTML since I noticed there is no instance where we are working directly with PHP from within -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trial Alpha</title>
+    <link rel="stylesheet" href="stingo.css">
+</head>
+
+<body onload="load()">
+    <table>
+        <tr>
+            <td>
+                <!-- &nbsp; add padding to reduce abrupt table width adjustments (solve this using CSS)-->
+                <label
+                    for="comboCounty">County&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </td>
+            <td>
+                <select name="county" id="comboCounty" onchange="populateConstituencyCombo()">
+                    <option value="default">SELECT COUNTY</option>
+                </select>
+            </td>
+
+            <td rowspan="10">
+                <textarea name="suggestions" id="suggestions" cols="60" rows="10" disabled="true"></textarea>
+            </td>
+        </tr>
+        <tr id="constituencyRow" hidden="true">
+            <td>
+                <label for="comboConstituency">Constituency</label>
+            </td>
+            <td>
+                <select name="county" id="comboConstituency" onchange="validateInputs()">
+                    <option value="default">SELECT CONSTITUENCY</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="rainfall">Rainfall</label></td>
+            <td><input type="text" id="rainfall" name="rainfall" placeholder="Enter current rainfall value"
+                    onchange="validateInputs()"></td>
+        </tr>
+        <tr>
+            <td><label for="temperature">Temperature</label></td>
+            <td style="width: 1900;"><input type="text" id="temperature" name="temperature"
+                    placeholder="Enter current temperature value" onchange="validateInputs()">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="humidity">Humidity</label></td>
+            <td><input type="text" id="humidity" name="humidity" placeholder="Enter current humidity value"
+                    onchange="validateInputs()"></td>
+        </tr>
+        <tr>
+        </tr>
+        <!-- <input type="button" value="Query" onclick="queryDatabase()"> -->
+    </table>
+</body>
+<script src="index.js">
+</script>
+
+</html>
